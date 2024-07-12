@@ -1,6 +1,9 @@
 .flex-between-center {
   @apply flex justify-between items-center;
 }
+.title-h2 {
+  @apply text-3xl text-black font-medium;
+}
 
 //.title {
 //  @apply text-gray-100 text-2xl sm:text-4xl font_neue font-semibold;
