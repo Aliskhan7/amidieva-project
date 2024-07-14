@@ -1,7 +1,5 @@
 import React from "react";
 
-const Shop = () => {
+export default function Shop() {
   return <div>Shop page</div>;
-};
-
-export default Shop;
+}
