@@ -7,7 +7,9 @@ import Logo from "../../../../public/assets/images/logo";
 const Header = () => {
   return (
     <div className="flex-between-center w-full pt-[72px] pb-[24px]">
-      <Logo />
+      <Link href="/">
+        <Logo />
+      </Link>
       <nav className="flex-between-center">
         <ul className="flex-between-center gap-x-16 mr-12">
           <li>
