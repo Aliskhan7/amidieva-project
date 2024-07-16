@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Main />
       <section className="w-full mt-16">
-        <h2 className="title-h2 mb-10">Новинки</h2>
+        <h2 className="title-h1 mb-10">Новинки</h2>
         <Products />
       </section>
     </main>

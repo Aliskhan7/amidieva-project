@@ -1,4 +1,6 @@
 import React from "react";
+import Switcher from "@/app/components/UI/Switcher";
+import SelectUI from "@/app/components/UI/SelectUI";
 
 const Filter = () => {
   return (
@@ -25,11 +27,11 @@ const Filter = () => {
       <div className="mt-10">
         <div className="flex-between-center mb-6">
           <label htmlFor="">On sale</label>
-          <input type="radio" />
+          <Switcher defaultEnabled />
         </div>
         <div className="flex-between-center mb-6">
           <label htmlFor="">In stock</label>
-          <input type="radio" />
+          <Switcher defaultEnabled />
         </div>
       </div>
     </div>
