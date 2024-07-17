@@ -1,6 +1,7 @@
 import React from "react";
 import Filter from "@/app/components/Filter/Filter";
-import Products from "@/app/components/Products/Products";
+import ProductsList from "@/app/components/ProductsList/ProductsList";
+import { dataProducts } from "@/app/components/ProductsList/data";
 
 export default function Shop() {
   return (
@@ -9,7 +10,7 @@ export default function Shop() {
       <div className="grid grid-cols-4 gap-x-8">
         <Filter />
         <div className="col-span-3">
-          <Products />
+          <ProductsList product={dataProducts} />
         </div>
       </div>
     </section>

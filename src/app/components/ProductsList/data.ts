@@ -1,8 +1,9 @@
 import product_1 from "../../../../public/assets/images/product_1.jpg";
 import product_2 from "../../../../public/assets/images/product_2.jpg";
 import product_3 from "../../../../public/assets/images/product_3.jpg";
+import { IProduct } from "@/app/types/types";
 
-export const dataProducts = [
+export const dataProducts: IProduct[] = [
   {
     id: 1,
     url: product_1,
