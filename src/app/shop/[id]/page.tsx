@@ -1,11 +1,11 @@
 "use client";
-import { useRouter } from "next/router";
 import { dataProducts } from "@/app/components/ProductsList/data";
-import { IProduct } from "@/app/types/types";
+import { useParams } from "next/navigation";
+import Product from "@/app/components/Product/Product";
 
 const ProductPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+  const params = useParams();
+  const { id } = params;
   const product = dataProducts.find((p) => p.id === Number(id));
 
   if (!product) {
@@ -14,8 +14,10 @@ const ProductPage = () => {
 
   return (
     <div>
+      <Product />
       <h1>{product.title}</h1>
       <p>{product.price}</p>
+      <p>{product.desc}</p>
     </div>
   );
 };
