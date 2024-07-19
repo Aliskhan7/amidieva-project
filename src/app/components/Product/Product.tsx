@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,53 +13,27 @@ import "../../styles/global.scss";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { dataProducts } from "@/app/components/ProductsList/data";
+import { IProduct } from "@/app/types/types";
 
-const Product = () => {
+const Product = ({ id, url, title, price, desc }: IProduct) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <section>
-      <div>
-        <div className="flex order-1">
+      <div
+        key={id}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 items-start mt-40 mb-24 "
+      >
+        <div>
           <Swiper
-            // style={{
-            //   "--swiper-navigation-color": "#fff",
-            //   "--swiper-pagination-color": "#fff",
-            // }}
             spaceBetween={10}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Thumbs]}
             className="mySwiper2"
           >
             <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              <Image src={url} alt="img" />
             </SwiperSlide>
           </Swiper>
           <Swiper
@@ -71,50 +46,20 @@ const Product = () => {
             className="mySwiper "
           >
             <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              <Image src={url} alt="img" />
             </SwiperSlide>
           </Swiper>
         </div>
         <div>
-          <h2>Lira Earrings</h2>
-          <span>22 $</span>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-              at commodi consequuntur dignissimos, distinctio facere hic ipsa,
-              itaque nam quidem saepe sunt veniam voluptas? Debitis dicta illum
-              iure modi quia?
-            </p>
-            <div>
+          <h2 className="text-2xl text-black mb-6">{title}</h2>
+          <span className="text-xl text-gold-400">$ {price}</span>
+          <div className="mt-12 mb-20">
+            <p className="text-base text-black">{desc}</p>
+            <div className="mt-12 flex-between-center gap-x-6">
               <div>counter</div>
-              <button>ADD TO CART</button>
+              <button className="border border-black rounded py-4 w-full text-black text-base">
+                ADD TO CART
+              </button>
             </div>
           </div>
           <div>social</div>
