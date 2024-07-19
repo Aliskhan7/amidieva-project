@@ -6,7 +6,7 @@ import Logo from "../../../../public/assets/images/logo";
 
 const Header = () => {
   return (
-    <div className="flex-between-center w-full pt-[72px] pb-[24px]">
+    <div className="flex-between-center w-full pt-[72px] pb-[24px] border-b border-b-gray-200">
       <Link href="/">
         <Logo />
       </Link>
