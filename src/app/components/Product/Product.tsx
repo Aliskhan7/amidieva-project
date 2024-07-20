@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperType from "swiper";
 import Image from "next/image";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -11,13 +10,18 @@ import "swiper/css/thumbs";
 
 import "../../styles/global.scss";
 
-// import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { dataProducts } from "@/app/components/ProductsList/data";
 import { IProduct } from "@/app/types/types";
+import Counter from "@/app/components/UI/Counter";
+import {
+  InstagramLogo,
+  TelegramLogo,
+  WhatsappLogo,
+} from "@phosphor-icons/react";
+import Tabs from "@/app/components/UI/Tabs";
 
 const Product = ({ id, url, title, price, desc }: IProduct) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
     <section>
@@ -56,22 +60,34 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
           <div className="mt-12 mb-20">
             <p className="text-base text-black">{desc}</p>
             <div className="mt-12 flex-between-center gap-x-6">
-              <div>counter</div>
+              <Counter counter={1} />
               <button className="border border-black rounded py-4 w-full text-black text-base">
                 ADD TO CART
               </button>
             </div>
           </div>
-          <div>social</div>
+          <div className="flex-between-center gap-x-3 w-fit mb-8">
+            <a href="#">
+              <TelegramLogo size={24} color="#979797" />
+            </a>
+            <a href="#">
+              <InstagramLogo size={24} color="#979797" />
+            </a>
+            <a href="#">
+              <WhatsappLogo size={24} color="#979797" />
+            </a>
+          </div>
           <div>
-            <p>
-              Категория: <span>Fashion, style</span>
+            <p className="text-base ">
+              Категория: <span className="text-gray-400">Fashion, style</span>
             </p>
           </div>
         </div>
       </div>
 
-      <div></div>
+      <div>
+        <Tabs />
+      </div>
     </section>
   );
 };
