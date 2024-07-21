@@ -1,5 +1,7 @@
 import React from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import { dataProducts } from "@/app/components/ProductsList/data";
+import { IProduct } from "@/app/types/types";
 
 const categories = [
   {
@@ -41,45 +43,28 @@ const categories = [
     ],
   },
 ];
-const Tabs = () => {
+const Tabs = ({ titleTab, products }) => {
   return (
     <div>
       <div className="flex w-full pt-4 px-4">
         <div className="w-full ">
           <TabGroup>
             <TabList className="flex gap-4">
-              {categories.map(({ name }) => (
-                <Tab
-                  key={name}
-                  className="rounded-full py-1 px-3 text-sm/6 font-semibold text-back focus:outline-none data-[selected]:bg-black/10 data-[hover]:bg-white/5 data-[selected]:data-[hover]:bg-black/10 data-[focus]:outline-1 data-[focus]:outline-white"
-                >
-                  {name}
-                </Tab>
-              ))}
+              {titleTab.map((title: string) => {
+                return (
+                  <Tab className="py-1 pb-8 text-xl text-gray-400 focus:outline-none data-[selected]:text-black  data-[selected]:border-b data-[selected]:border-black data-[focus]:outline-1 data-[focus]:outline-white">
+                    {title}
+                  </Tab>
+                );
+              })}
             </TabList>
-            <TabPanels className="mt-3">
-              {categories.map(({ name, posts }) => (
-                <TabPanel key={name} className="rounded-xl bg-white/5 p-3">
-                  <ul>
-                    {posts.map((post) => (
-                      <li
-                        key={post.id}
-                        className="relative rounded-md p-3 text-sm/6 transition hover:bg-black/5"
-                      >
-                        <a href="#" className="font-semibold text-back">
-                          <span className="absolute inset-0" />
-                          {post.title}
-                        </a>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Deleniti molestiae quisquam unde? Autem commodi
-                          dicta dignissimos, explicabo ipsa ipsum laboriosam
-                          laudantium libero minima mollitia odit quas quia
-                          quibusdam recusandae repellendus.
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+            <TabPanels className=" border-t border-t-gray-200">
+              {products.map((product: IProduct) => (
+                <TabPanel
+                  key={product.id}
+                  className="rounded-xl bg-white/5 py-3"
+                >
+                  <ul>{product.desc}</ul>
                 </TabPanel>
               ))}
             </TabPanels>

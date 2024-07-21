@@ -19,6 +19,9 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react";
 import Tabs from "@/app/components/UI/Tabs";
+import { dataProducts } from "@/app/components/ProductsList/data";
+
+const titleProducts = ["Description", "Aditional information"];
 
 const Product = ({ id, url, title, price, desc }: IProduct) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
@@ -86,7 +89,7 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
       </div>
 
       <div>
-        <Tabs />
+        <Tabs titleTab={titleProducts} products={dataProducts} />
       </div>
     </section>
   );
