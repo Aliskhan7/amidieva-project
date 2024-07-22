@@ -7,3 +7,11 @@ export interface IProduct {
   desc?: string;
   price: number;
 }
+export interface IBlog {
+  id: number;
+  url: StaticImageData;
+  data: Date;
+  title: string;
+  desc?: string;
+  link: string;
+}
