@@ -13,5 +13,4 @@ export interface IBlog {
   data: Date;
   title: string;
   desc?: string;
-  link: string;
 }

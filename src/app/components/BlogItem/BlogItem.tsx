@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { IBlog } from "@/app/types/types";
@@ -8,6 +9,8 @@ interface BlogListProps {
 }
 
 const BlogItem: React.FC<BlogListProps> = ({ blog }) => {
+  const truncateString = (s: string | undefined, w: number) =>
+    s!.length > w ? s!.slice(0, w) + "..." : s;
   return (
     <div>
       <Image
@@ -16,9 +19,19 @@ const BlogItem: React.FC<BlogListProps> = ({ blog }) => {
         alt="product"
       />
       <div className="mt-6">
-        <h3 className="text-2xl text-black mb-4">{blog.title}</h3>
-        <span className="text-2xl text-gold-400">{blog.desc}</span>
-        <Link href={`/blog/${blog.id}`}>Read More</Link>
+        <span className="text-sm text-gray-400 ">
+          Fashion {blog.data.toString()}{" "}
+        </span>
+        <h3 className="text-xl text-black mb-3.5 mt-2">{blog.title}</h3>
+        <p className="text-base text-gray-400 mb-6 ">
+          {truncateString(blog?.desc, 100)}
+        </p>
+        <Link
+          href={`/blog/${blog.id}`}
+          className="text-gold-400 text-base font-bold"
+        >
+          Read More
+        </Link>
       </div>
     </div>
   );
