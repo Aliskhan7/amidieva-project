@@ -10,6 +10,19 @@ export const dataBlog: IBlog[] = [
     title: "Top Trends From Spring",
     data: new Date(),
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. ",
-    link: "",
+  },
+  {
+    id: 2,
+    url: blog_1,
+    title: "Top Trends From Spring",
+    data: new Date(),
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. ",
+  },
+  {
+    id: 3,
+    url: blog_1,
+    title: "Top Trends From Spring",
+    data: new Date(),
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. ",
   },
 ];

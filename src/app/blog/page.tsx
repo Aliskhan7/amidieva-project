@@ -4,9 +4,9 @@ import { dataBlog } from "@/app/components/BlogList/data";
 
 const Blog = () => {
   return (
-    <div>
+    <section className="w-full mt-16">
       <BlogList blogs={dataBlog} />
-    </div>
+    </section>
   );
 };
 
