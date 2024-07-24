@@ -24,7 +24,7 @@ const BlogItem: React.FC<BlogListProps> = ({ blog }) => {
   return (
     <div>
       <Image
-        src={blog.url}
+        src={blog.url[0]}
         className="rounded-xl overflow-hidden w-full h-full object-cover"
         alt="product"
       />
