@@ -4,7 +4,7 @@ import { dataBlog } from "@/app/components/BlogList/data";
 
 const Blog = () => {
   return (
-    <section className="w-full mt-16">
+    <section className="w-full my-16">
       <BlogList blogs={dataBlog} />
     </section>
   );
