@@ -11,16 +11,26 @@ interface BlogListProps {
 const BlogItem: React.FC<BlogListProps> = ({ blog }) => {
   const truncateString = (s: string | undefined, w: number) =>
     s!.length > w ? s!.slice(0, w) + "..." : s;
+
+  let data = new Date(blog.data.toString());
+
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const formattedDate = data.toLocaleDateString("ru-RU", options);
+
   return (
     <div>
       <Image
         src={blog.url}
-        className="rounded-xl overflow-hidden"
+        className="rounded-xl overflow-hidden w-full h-full object-cover"
         alt="product"
       />
       <div className="mt-6">
         <span className="text-sm text-gray-400 ">
-          Fashion {blog.data.toString()}{" "}
+          Fashion - {formattedDate}
         </span>
         <h3 className="text-xl text-black mb-3.5 mt-2">{blog.title}</h3>
         <p className="text-base text-gray-400 mb-6 ">

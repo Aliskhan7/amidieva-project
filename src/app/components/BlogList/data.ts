@@ -1,4 +1,4 @@
-import blog_1 from "../../../../public/assets/images/product_1.jpg";
+import blog_1 from "../../../../public/assets/images/blog-1.jpg";
 import blog_2 from "../../../../public/assets/images/product_2.jpg";
 import blog_3 from "../../../../public/assets/images/product_3.jpg";
 import { IBlog } from "@/app/types/types";
