@@ -21,6 +21,7 @@ const BlogPage = () => {
         title={blog.title}
         desc={blog.desc}
         data={new Date()}
+        descContent={blog.descContent}
       />
     </div>
   );

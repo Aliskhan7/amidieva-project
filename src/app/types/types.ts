@@ -9,8 +9,9 @@ export interface IProduct {
 }
 export interface IBlog {
   id: number;
-  url: StaticImageData;
+  url: StaticImageData[];
   data: Date;
   title: string;
   desc?: string;
+  descContent?: string;
 }
