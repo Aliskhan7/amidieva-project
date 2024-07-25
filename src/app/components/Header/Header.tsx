@@ -24,7 +24,10 @@ const Header = () => {
         </ul>
         <div className="flex-between-center gap-x-10 ml-12">
           <MagnifyingGlass size={20} weight="thin" />
-          <ShoppingCart size={20} weight="thin" />
+          <Link href="/cart">
+            <ShoppingCart size={20} weight="thin" />
+          </Link>
+
           <User size={20} weight="thin" />
         </div>
       </nav>

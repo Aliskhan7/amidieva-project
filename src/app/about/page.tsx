@@ -5,7 +5,7 @@ import about_2 from "../../../public/assets/images/about_img_2.jpg";
 
 const About = () => {
   return (
-    <div className="w-[700px] mx-auto   mt-24">
+    <div className="w-[700px] mx-auto mt-24">
       <div className="mb-10">
         <div className="mb-12 text-center">
           <h1 className="title-h1 mb-6">About</h1>
