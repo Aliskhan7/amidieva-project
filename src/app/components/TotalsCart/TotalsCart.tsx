@@ -2,7 +2,7 @@ import React from "react";
 
 const TotalsCart = () => {
   return (
-    <div>
+    <div className="p-10">
       <h2 className="text-[26px] text-black">Cart totals</h2>
       <div className="mt-11">
         <div className="flex-between-center">
