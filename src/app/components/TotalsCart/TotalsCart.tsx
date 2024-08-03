@@ -20,7 +20,7 @@ const TotalsCart = () => {
         <span className="text-base text-black font-bold">TOTAL</span>
         <span className="text-base text-black font-bold">$ 87,00</span>
       </div>
-      <button className="bg-black text-base text-white w-full py-4 rounded uppercase font-bold">
+      <button className="bg-black border border-black hover:bg-transparent hover:text-black ease-in duration-150 text-base text-white w-full py-4 rounded uppercase font-bold">
         PROCEED TO CHECKOUT
       </button>
     </div>

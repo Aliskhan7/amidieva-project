@@ -64,7 +64,7 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
             <p className="text-base text-black">{desc}</p>
             <div className="mt-12 flex-between-center gap-x-6">
               <Counter counter={1} />
-              <button className="border border-black rounded py-4 w-full text-black text-base">
+              <button className="bg-transparent border border-black hover:bg-black hover:text-white ease-in duration-150 rounded py-4 w-full text-black text-base">
                 ADD TO CART
               </button>
             </div>
