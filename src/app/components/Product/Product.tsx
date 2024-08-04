@@ -89,7 +89,7 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
       </div>
 
       <div>
-        <Tabs titleTab={titleProducts} products={dataProducts} />
+        <Tabs titleTab={titleProducts} items={dataProducts} />
       </div>
     </section>
   );
