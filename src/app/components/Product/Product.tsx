@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperType from "swiper";
@@ -20,19 +21,43 @@ import {
 } from "@phosphor-icons/react";
 import Tabs from "@/app/components/UI/Tabs";
 import { dataProducts } from "@/app/components/ProductsList/data";
+import { motion } from "framer-motion";
 
 const titleProducts = ["Description", "Aditional information"];
 
 const Product = ({ id, url, title, price, desc }: IProduct) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
+  const leftAnimated = {
+    hidden: {
+      x: -500,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.2, delay: 0.2 },
+    },
+  };
+
+  const rightAnimated = {
+    hidden: {
+      x: 500,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.2, delay: 0.2 },
+    },
+  };
   return (
-    <section>
-      <div
+    <motion.section initial="hidden" whileInView="visible">
+      <motion.div
         key={id}
         className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 items-start mt-40 mb-24 "
       >
-        <div>
+        <motion.div variants={leftAnimated}>
           <Swiper
             spaceBetween={10}
             thumbs={{ swiper: thumbsSwiper }}
@@ -56,8 +81,8 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
               <Image src={url} alt="img" />
             </SwiperSlide>
           </Swiper>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={rightAnimated}>
           <h2 className="text-2xl text-black mb-6">{title}</h2>
           <span className="text-xl text-gold-400">$ {price}</span>
           <div className="mt-12 mb-20">
@@ -85,13 +110,13 @@ const Product = ({ id, url, title, price, desc }: IProduct) => {
               Категория: <span className="text-gray-400">Fashion, style</span>
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <div>
         <Tabs titleTab={titleProducts} items={dataProducts} />
       </div>
-    </section>
+    </motion.section>
   );
 };
 
