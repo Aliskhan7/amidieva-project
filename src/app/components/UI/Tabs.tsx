@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { dataProducts } from "@/app/components/ProductsList/data";
 import { IProduct } from "@/app/types/types";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Tabs = ({ titleTab, items }) => {
   return (
@@ -21,7 +22,16 @@ const Tabs = ({ titleTab, items }) => {
             <TabPanels className=" border-t border-t-gray-200">
               {items.map((item: IProduct) => (
                 <TabPanel key={item.id} className="rounded-xl bg-white/5 py-3">
-                  <ul>{item.desc}</ul>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -10, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ul>{item.desc}</ul>
+                    </motion.div>
+                  </AnimatePresence>
                 </TabPanel>
               ))}
             </TabPanels>
