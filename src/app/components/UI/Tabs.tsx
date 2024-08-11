@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { dataProducts } from "@/app/components/ProductsList/data";
 import { IProduct } from "@/app/types/types";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Tabs = ({ titleTab, items }) => {
+interface TabsProps {
+  titleTab: string[];
+  items: IProduct[];
+}
+const Tabs: React.FC<TabsProps> = ({ titleTab, items }) => {
   return (
     <div>
       <div className="flex w-full pt-4 px-4">
