@@ -27,8 +27,9 @@ const Header = () => {
           <Link href="/cart">
             <ShoppingCart size={20} weight="thin" />
           </Link>
-
-          <User size={20} weight="thin" />
+          <Link href="/account">
+            <User size={20} weight="thin" />
+          </Link>
         </div>
       </nav>
     </div>

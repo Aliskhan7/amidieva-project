@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="xl:container mx-auto flex flex-col items-center justify-between px-5">
+        <div className="xl:container mx-auto flex flex-col h-screen items-center justify-between px-5">
           <Header />
           {children}
           <Footer />
