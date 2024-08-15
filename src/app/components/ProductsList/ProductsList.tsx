@@ -29,7 +29,7 @@ const ProductsList: React.FC<ProductListProps> = ({ product }) => {
       {product?.map((product) => {
         return (
           <motion.div variants={rightAnimated}>
-            <ProductItem key={product.id} product={product} />;
+            <ProductItem key={product.id} product={product} />
           </motion.div>
         );
       })}

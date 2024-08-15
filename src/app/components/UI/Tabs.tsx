@@ -23,7 +23,7 @@ const Tabs: React.FC<TabsProps> = ({ titleTab, items }) => {
               })}
             </TabList>
             <TabPanels className=" border-t border-t-gray-200">
-              {items.map((item: IProduct) => (
+              {items.map((item) => (
                 <TabPanel key={item.id} className="rounded-xl bg-white/5 py-3">
                   <AnimatePresence mode="wait">
                     <motion.div
