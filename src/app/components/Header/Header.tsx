@@ -44,11 +44,11 @@ const Header = () => {
           })}
         </ul>
         <div className="flex-between-center gap-x-10 ml-12">
-          <MagnifyingGlass size={20} weight="thin" />
-          <Link href="/cart">
-            <ShoppingCart size={20} weight="thin" />
-          </Link>
-          <Link href="/account">
+          {/*<MagnifyingGlass size={20} weight="thin" />*/}
+          {/*<Link href="/cart">*/}
+          {/*  <ShoppingCart size={20} weight="thin" />*/}
+          {/*</Link>*/}
+          <Link href="/account"  className='cur'>
             <User size={20} weight="thin" />
           </Link>
         </div>
