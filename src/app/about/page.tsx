@@ -61,9 +61,9 @@ const About = () => {
     >
       <motion.div className="mb-10">
         <motion.div variants={topAnimated} className="mb-12 text-center">
-          <h1 className="title-h1 mb-6">About</h1>
+          <h1 className="title-h1 mb-6">О нас</h1>
           <p className="text-xl text-black">
-            Who we are and why we do what we do!
+            Кто мы и почему мы делаем то, что делаем!
           </p>
         </motion.div>
         <motion.div variants={bottomAnimated}>
@@ -77,7 +77,7 @@ const About = () => {
         </motion.div>
       </motion.div>
       <motion.div variants={rightAnimated} className="mb-10">
-        <h2 className="text-[26px] text-black mb-6">Top trends</h2>
+        <h2 className="text-[26px] text-black mb-6">Главные тренды</h2>
         <Image src={about_1} alt="photo" />
         <p className="text-base text-black mt-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -91,7 +91,7 @@ const About = () => {
         </ul>
       </motion.div>
       <motion.div variants={leftAnimated}>
-        <h2 className="text-[26px] text-black mb-6">Produced with care</h2>
+        <h2 className="text-[26px] text-black mb-6">Произведено с заботой</h2>
         <Image src={about_2} alt="photo" />
         <p className="text-base text-black mt-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
